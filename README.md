@@ -1,4 +1,5 @@
-# MedStream - Real-time Healthcare Analytics (Data Engineering Project)
+# MedStream - Real-time Healthcare Analytics 
+# (Data Engineering Project)
 
 ## Overview
 **MedStream** is an end-to-end **real-time healthcare data engineering and analytics platform** built on Microsoft Azure.  
@@ -19,7 +20,7 @@ MedStream addresses this by enabling **real-time ingestion, scalable processing,
 ---
 
 ## Architecture Overview
-MedStream follows a **hybrid streaming + batch Lakehouse architecture**.
+MedStream follows a **hybrid streaming** and **batch Lakehouse architecture**.
 
 ![System Architecture Diagram](https://github.com/Ranjithnathk/MedStream_Real_Time_Healthcare_Analytics/blob/main/docs/MedStream_Architecture_Diagram.png)
 
@@ -246,4 +247,4 @@ MedStream_Real_Time_Healthcare_Analytics/
 
 ## Author
 
-Ranjithnath Karunanidhi
+Ranjithnath Karunanidhi [LinkedIn](https://www.linkedin.com/in/ranjithnathk/)
