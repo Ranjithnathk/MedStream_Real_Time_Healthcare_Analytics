@@ -1,4 +1,4 @@
-# MedStream - Real-time Healthcare Data Engineering Project
+# MedStream - Real-time Healthcare Analytics (Data Engineering Project)
 
 ## Overview
 **MedStream** is an end-to-end **real-time healthcare data engineering and analytics platform** built on Microsoft Azure.  
@@ -42,6 +42,7 @@ MedStream follows a **hybrid streaming + batch Lakehouse architecture**.
 ## Data Sources
 
 **Synthea Patients Records Data:** https://synthea.mitre.org/
+
 **Link:** https://mitre.box.com/shared/static/aw9po06ypfb9hrau4jamtvtz0e5ziucz.zip
 
 ### Streaming
