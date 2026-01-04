@@ -21,7 +21,7 @@ MedStream addresses this by enabling **real-time ingestion, scalable processing,
 ## Architecture Overview
 MedStream follows a **hybrid streaming + batch Lakehouse architecture**.
 
-Diagram
+![System Architecture Diagram](https://github.com/Ranjithnathk/MedStream_Real_Time_Healthcare_Analytics/blob/main/docs/MedStream_Architecture_Diagram.png)
 
 ---
 
@@ -40,6 +40,9 @@ Diagram
 ---
 
 ## Data Sources
+
+**Synthea Patients Records Data:** https://synthea.mitre.org/
+**Link:** https://mitre.box.com/shared/static/aw9po06ypfb9hrau4jamtvtz0e5ziucz.zip
 
 ### Streaming
 - Patient encounter events
@@ -89,6 +92,14 @@ Power BI dashboards provide:
 
 Power BI consumes **analytics-ready Parquet datasets directly from ADLS Gen2** for high performance and scalability.
 
+### Dashboard Screenshots
+
+![Department Analytics](https://github.com/Ranjithnathk/MedStream_Real_Time_Healthcare_Analytics/blob/main/powerbi/dashboard_screenshots/dashboard_department_analytics.png)
+
+![Organization Monthly Trends](https://github.com/Ranjithnathk/MedStream_Real_Time_Healthcare_Analytics/blob/main/powerbi/dashboard_screenshots/dashboard_org_monthly_trends.png)
+
+![Payer Coverage](https://github.com/Ranjithnathk/MedStream_Real_Time_Healthcare_Analytics/blob/main/powerbi/dashboard_screenshots/dashboard_payer_coverage.png)
+
 ---
 
 ## How to Run This Project
@@ -132,10 +143,10 @@ python synthea_encounter_producer.py
 
 ### Step 3: Databricks Streaming Pipeline
 Run notebooks in order:
-1. 01_bronze_rawdata.ipynb
+1. **01_bronze_rawdata.ipynb**
     - Reads from Event Hub
     - Writes raw data to Bronze
-2. 02_silver_cleandata.ipynb
+2. **02_silver_cleandata.ipynb**
     - Cleans & standardizes streaming data
     - Writes to Silver
 
@@ -146,20 +157,20 @@ Run notebooks in order:
 2. Configure ADF Copy pipelines
 3. Load batch data into Bronze
 
-Notebook: 03_bronze_batch_reference_load.ipynb
+**Notebook: 03_bronze_batch_reference_load.ipynb**
 
 ---
 
 ### Step 5: Silver & Gold Processing
 Run notebooks:
-1. 04_silver_dimensions.ipynb
-2. 05_silver_fact_encounters_enriched.ipynb
-3. 06_gold_marts_analytics.ipynb
+1. **04_silver_dimensions.ipynb**
+2. **05_silver_fact_encounters_enriched.ipynb**
+3. **06_gold_marts_analytics.ipynb**
 
 ---
 
 ### Step 6: Export for Power BI
-Run: 07_powerbi_exports.ipynb
+**Run: 07_powerbi_exports.ipynb**
 
 This exports Parquet datasets to:
 ```bash
