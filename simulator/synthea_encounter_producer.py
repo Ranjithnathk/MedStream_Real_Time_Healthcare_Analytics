@@ -4,6 +4,7 @@ import time
 from datetime import datetime, timezone
 from typing import Dict, Any, Iterable
 import os
+
 from dotenv import load_dotenv
 from kafka import KafkaProducer
 
@@ -15,7 +16,8 @@ load_dotenv()
 # 1) Event Hubs (Kafka) config 
 EVENTHUBS_NAMESPACE = os.getenv("EVENTHUBS_NAMESPACE")
 EVENT_HUB_NAME = os.getenv("EVENT_HUB_NAME")
-CONNECTION_STRING = os.getenv("EVENTHUB_CONNECTION_STRING")
+CONNECTION_STRING = os.getenv("CONNECTION_STRING")
+
 
 # 2) Local data folder config
 #    Folder where your 6 CSVs currently live
@@ -221,23 +223,19 @@ if __name__ == "__main__":
     print("Kafka producer created. Starting to send events to Event Hubs...")
 
     try:
-        max_events = 1000   # 🔹 how many events to send
         count = 0
 
         for event in events:
-            if count >= max_events:
-                break
-
             producer.send(EVENT_HUB_NAME, event)
             count += 1
 
             # Print only first 10 and then every 100th event
             if count <= 10 or count % 100 == 0:
-                print(f"[{count}/{max_events}] Sent to Event Hub: {event}")
+                print(f"[{count}] Sent to Event Hub: {event}")
 
             time.sleep(SLEEP_SECONDS_BETWEEN_EVENTS)
 
-        print(f"Finished sending {max_events} events. Exiting.")
+        print(f"Finished sending all events. Total sent: {count}. Exiting.")
     except KeyboardInterrupt:
         print("Stopping producer (Keyboard Interrupt).")
     finally:
