@@ -1,5 +1,4 @@
 # MedStream - Real-time Healthcare Analytics 
-# (Data Engineering Project)
 
 ## Overview
 **MedStream** is an end-to-end **real-time healthcare data engineering and analytics platform** built on Microsoft Azure.  
